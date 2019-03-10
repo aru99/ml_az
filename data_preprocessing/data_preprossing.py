@@ -25,10 +25,14 @@ imputer = imputer.fit(X[:, 1:3])
 X[:, 1:3] = imputer.transform(X[:, 1:3])
 
 #encoding the categorial data 
-from sklearn.preprocessing import LabelEncoder
-labelencoder_X = LabelEncoder()
-X[:,0]=labelencoder_X.fit_transform(X[:,0])
-
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+label_encoder_X = LabelEncoder()
+X[:,0]=label_encoder_X.fit_transform(X[:,0])
+one_hot_encoder = OneHotEncoder(categorical_features = [0])
+X = one_hot_encoder.fit_transform(X).toarray()
+#labelEncoding the purchased coloumn 
+label_encoder_Y = LabelEncoder()
+Y = label_encoder_Y.fit_transform(Y)
 
 
 
