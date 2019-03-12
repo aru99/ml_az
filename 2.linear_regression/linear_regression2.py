@@ -7,7 +7,7 @@ from sklearn.linear_model import LinearRegression
 # importing dataset
 dataset = pd.read_csv('train.csv')
 X = dataset.iloc[:200, :-1].values
-Y = dataset.iloc[:200, 1]
+Y = dataset.iloc[:200, 1].values
 
 # splitting the data_set into traning set and test set
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=1 / 3, random_state=0)
