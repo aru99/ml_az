@@ -68,7 +68,7 @@ X_opt = X[:, [0, 3, 5]]
 regressor_OLS = sm.OLS(endog=Y, exog=X_opt).fit()
 print(regressor_OLS.summary())
 
-# final OLS model to be used. 
+# final OLS model to be used.
 # creating a matrix of all the independent variables
 X_opt = X[:, [0, 3]]
 # calling the ols class
