@@ -40,18 +40,40 @@ Y_pred = regressor.predict(X_test)
 # building the optimal model using the Backward Elimination
 X = np.append(arr=np.ones((50, 1)).astype(int), values=X, axis=1)
 
+# creating a matrix of all the independent variables
+X_opt = X[:, [0, 1, 2, 3, 4, 5]]
+# calling the ols class
+regressor_OLS = sm.OLS(endog=Y, exog=X_opt).fit()
+print(regressor_OLS.summary())
+
+# without dummy variable 2
+# creating a matrix of all the independent variables
+X_opt = X[:, [0, 1, 3, 4, 5]]
+# calling the ols class
+regressor_OLS = sm.OLS(endog=Y, exog=X_opt).fit()
+print(regressor_OLS.summary())
+
+# without dummy variable 1
+# creating a matrix of all the independent variables
+X_opt = X[:, [0, 3, 4, 5]]
+# calling the ols class
+regressor_OLS = sm.OLS(endog=Y, exog=X_opt).fit()
+print(regressor_OLS.summary())
 
 
+# without 4
+# creating a matrix of all the independent variables
+X_opt = X[:, [0, 3, 5]]
+# calling the ols class
+regressor_OLS = sm.OLS(endog=Y, exog=X_opt).fit()
+print(regressor_OLS.summary())
 
 
-
-
-
-
-
-
-
-
+# creating a matrix of all the independent variables
+X_opt = X[:, [0, 3]]
+# calling the ols class
+regressor_OLS = sm.OLS(endog=Y, exog=X_opt).fit()
+print(regressor_OLS.summary())
 
 
 
