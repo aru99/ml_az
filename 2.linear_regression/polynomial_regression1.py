@@ -44,7 +44,17 @@ plt.xlabel("position level")
 plt.ylabel("salary")
 plt.show()
 
+# both visualisations in the same graph
 
+X_grid = np.arange(min(X), max(X), 0.01)
+X_grid = X_grid.reshape(len(X_grid),1)
+plt.scatter(X, Y, color="red", marker=".")
+plt.plot(X_grid, lin_reg_2.predict(poly_reg.fit_transform(X_grid)), color='blue')
+plt.plot(X,lin_reg.predict(X),color='green')
+plt.title("truth or bluff (ploynomial regression)")
+plt.xlabel("position level")
+plt.ylabel("salary")
+plt.show()
 
 
 
