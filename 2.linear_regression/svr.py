@@ -19,7 +19,7 @@ Y = dataset.iloc[:, 2].values
 sc_X = StandardScaler()
 sc_Y = StandardScaler()
 X = sc_X.fit_transform(X)
-Y = sc_Y.fit_transform(Y)
+Y = sc_Y.fit_transform(Y.reshape(-1,1))
 
 
 # fitting svr to the dataset
