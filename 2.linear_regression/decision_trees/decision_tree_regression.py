@@ -20,7 +20,7 @@ regressor.fit(X, Y)
 # predicting a new result
 Y_pred = regressor.predict([[6.5]])
 
-# predicting the results
+# visualising the result (low res)
 plt.scatter(X,Y,color='red')
 plt.plot(X,regressor.predict(X), color="blue")
 plt.title("regression model plot 1 (Decision tree)")
@@ -28,5 +28,13 @@ plt.xlabel('Position')
 plt.ylabel("slalry")
 plt.show()
 
+# visualising the result (high res)
+X_grid = np.arange(min(X), max(X), 0.01)
+X_grid = X_grid.reshape((len(X_grid),1))
+plt.scatter(X, Y, color='red')
+plt.plot(X_grid,regressor.predict(X_grid), color='blue')
+plt.title('regressor model (decision tree high res)')
+plt.xlabel('position')
+plt.ylabel('slalary')
+plt.show()
 
-# 
