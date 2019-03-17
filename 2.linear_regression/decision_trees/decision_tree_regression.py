@@ -38,3 +38,7 @@ plt.xlabel('position')
 plt.ylabel('slalary')
 plt.show()
 
+#another visualisation 
+plt.scatter(X,Y,color='red')
+plt.scatter(X,regressor.predict(X),color = 'blue')
+plt.show()
