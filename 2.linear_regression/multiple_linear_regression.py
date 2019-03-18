@@ -77,7 +77,10 @@ print(regressor_OLS.summary())
 
 
 
-#
+#plots
+plt.scatter()
+plt.xlabel('')
+plt.ylabel('')
 
 
 
