@@ -8,6 +8,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 # importing library for logisticRegression
 from sklearn.linear_model import LogisticRegression
+# importing the library for confusion matrix
+from sklearn.metrics import confusion_matrix
 
 # importing the data set 
 dataset = pd.read_csv('Social_Network_Ads.csv')
@@ -26,9 +28,11 @@ X_test = sc_X.fit_transform(X_test)
 classifier = LogisticRegression(random_state=0)
 classifier.fit(X_train, Y_train)
 
+# predicting the results
+Y_pred = classifier.predict(X_test)
 
-
-
+# making the confusion matrix
+cm = confusion_matrix(Y_test, Y_pred)
 
 
 
