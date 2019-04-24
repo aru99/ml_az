@@ -14,8 +14,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 # for classifier
 from sklearn.tree import DecisionTreeClassifier
-# for confusio matrix
+# for confusion matrix
 from sklearn.metrics import confusion_matrix
+from matplotlib.colors import ListedColormap
+
 # ========================
 
 # dataset imort
@@ -50,7 +52,7 @@ cm = confusion_matrix(Y_test, Y_pred)
 print(cm)
 
 # Visualising the Training set results
-from matplotlib.colors import ListedColormap
+
 
 X_set, Y_set = X_train, Y_train
 X1, X2 = np.meshgrid(np.arange(start=X_set[:, 0].min() - 1, stop=X_set[:, 0].max() + 1, step=0.01),
@@ -69,7 +71,7 @@ plt.legend()
 plt.show()
 
 # Visualising the Test set results
-from matplotlib.colors import ListedColormap
+
 
 X_set, Y_set = X_test, Y_test
 X1, X2 = np.meshgrid(np.arange(start=X_set[:, 0].min() - 1, stop=X_set[:, 0].max() + 1, step=0.01),
